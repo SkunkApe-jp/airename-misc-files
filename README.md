@@ -1,6 +1,6 @@
 # AI Image Organizer - Daily Copy Script
 
-This repository contains helper scripts for running [AI Image Organizer](https://github.com/SkunkApe-jp) across multiple folder sets on a scheduled basis using Windows Task Scheduler.
+This repository contains helper scripts for running [AI Image Organizer](https://github.com/SkunkApe-jp/skunkapes-groq-image-rename) across multiple folder sets on a scheduled basis using Windows Task Scheduler.
 
 ## Files
 

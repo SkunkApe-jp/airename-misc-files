@@ -27,6 +27,37 @@ python daily_copy.py
 ### `global_memory.json`
 Sample global memory file used by the image organizer to track category paths across runs. Stored in `%APPDATA%\image_organizer\` when in use.
 
+## Related Helper Script
+
+### `organize_images.py` (from [AI Image Organizer repo](https://github.com/SkunkApe-jp/skunkapes-groq-image-rename/tree/main/misc%20scripts))
+
+Prepares your images by organizing them into numbered sets before running the daily copy script.
+
+**What it does:**
+- Moves image files from a source folder into numbered sets (`set_001`, `set_002`, ...)
+- Supports: `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.tiff`, `.webp`, `.ico`
+- Handles name conflicts by appending `_1`, `_2`, etc.
+
+**Usage:**
+```bash
+# Organize 50 images per folder
+python organize_images.py -n 50
+
+# Custom source and target directories
+python organize_images.py -n 25 -s "C:\path\to\images" -t organized
+```
+
+**Arguments:**
+- `-n, --number` (required): Images per folder
+- `-s, --source` (optional): Source directory (default: `.`)
+- `-t, --target` (optional): Output directory (default: `files`)
+
+**Workflow:**
+1. Use `organize_images.py` to split images into numbered sets
+2. Place `daily_copy.py` and `run_daily_copy.bat` in the target directory
+3. Set up Windows Task Scheduler to run `daily_copy.py` daily
+4. Each day it processes one set folder automatically
+
 ## Windows Task Scheduler Setup
 
 1. Open Task Scheduler
